@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
 
+  
+
+  .booked {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+  
+  .table-form-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.scroll-container {
+  flex: 2;
+  max-height: 800px;
+  overflow-y: auto;
+  border: 1px solid #aaa;
+}
+
+.booking-form {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: auto;
+}
+
+.booking-form h3 {
+  margin-top: 0;
+}
+
+.booking-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.booking-form button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #9e0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #7e0303;
+}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      height: 100px;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      text-align: center;
+      word-wrap: break-word;
+    }
+    th {
+      height: 30px;
+    }
+    td {
+      height: 100px;
+      width: 150px;
+    }
+    .time-column {
+      width: 60px;
+    }
+    .scroll-container {
+      max-height: 800px; /* Adjust as needed */
+      overflow-y: auto;
+      border: 1px solid #aaa;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Book A Room</h2>
+    <a href="Untitled-1.html" class="sidebar-button">Dashboard</a>
+    <a href="Book-A-Room.html" class="sidebar-button">Book A Room</a>
+    <a href="My-Booking.html" class="sidebar-button">My Bookings</a>
+   <a href="" class="sidebar-button">User</a>
+  </div>
+
+
+  <div class="main">
+    <div class="top-bar"></div>
+  
+    <div class="date-display"></div>
+
+
+    <div class="table-form-wrapper">
+  <div class="scroll-container">
+    <table>
+      <tr>
+        <th class="time-column">Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <!-- Time slots -->
+      <tr><td class="time-column">9AM</td><td>Booked Room 45</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">10AM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">11AM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">12PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">1PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">2PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">3PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">4PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">5PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">6PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">7PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="time-column">8PM</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <form class="booking-form" action="submit-booking.php" method="POST">
+    <h3>Schedule a Room</h3>
+
+    <label for="room">Select Room:</label>
+    <select id="room" name="room" required>
+      <option value="">--Choose a Room--</option>
+      <option value="Room 45">Room 45</option>
+      <option value="Room 51">Room 51</option>
+      <option value="Room 55">Room 55</option>
+      <option value="Room 62">Room 62</option>
+      <option value="Room 65">Room 65</option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="date" required />
+
+    <label for="start-time">Start Time:</label>
+    <input type="time" id="start-time" name="start_time" required />
+
+    <label for="end-time">End Time:</label>
+    <input type="time" id="end-time" name="end_time" required />
+
+    <label for="purpose">Purpose:</label>
+    <input type="text" id="purpose" name="purpose" placeholder="e.g. Math Class" required />
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</div>
+
+
+    <div class="available-rooms">
+      <h3>Available Classrooms</h3>
+      <ul>
+        <li>Room 55</li>
+        <li>Room 65</li>
+        <li>Room 62</li>
+        <li>Room 56</li>
+        <li>Room 51</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+  const form = document.querySelector('.booking-form');
+  const tableCells = document.querySelectorAll('td[data-day]');
+</script>
+
+
+  <script>
+  const dateElement = document.querySelector('.date-display');
+  const today = new Date();
+
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  dateElement.textContent = today.toLocaleDateString('en-US', options);
+</script>
